@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Joke Generator</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- H1 Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Rock+3D&display=swap" rel="stylesheet">
+  <!-- Joke font -->
+  <link href="https://fonts.googleapis.com/css2?family=Atma:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+  <h1>Random Joke Generator</h1>
+
+  <main>
+    <div class="fLine">
+      <p>
+        <%= setup %>
+      </p>
+    </div>
+    <% if (delivery) { %>
+    <p class="lLine">
+      <%= delivery %>
+    </p>
+    <% } %>
+  </main>
+  
+  <footer>
+    <button id="new-joke-btn">Get Another Joke</button>
+  </footer>
+  
+  <script>
+    document.getElementById("new-joke-btn").addEventListener("click", () => {
+      window.location.reload(); // Reloads the page to trigger a new GET request
+    });
+  </script>
+
+</body>
+</html>
